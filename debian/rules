@@ -13,7 +13,7 @@ path-override-prepare:
 	sh -c "cd mkbootimg && make CFLAGS="-Wno-error=stringop-overflow" && make install"
 	rm -rf mkbootimg
 
-out/KERNEL_OBJ/boot.img: out/KERNEL_OBJ/initramfs.gz out/KERNEL_OBJ/target-dtb
+out/KERNEL_OBJ/boot.img: out/KERNEL_OBJ/initramfs.gz out/KERNEL_OBJ/target-dtb.default
 	$(shell mkbootimg \
 		--kernel $(KERNEL_OUT)/arch/$(KERNEL_ARCH)/boot/$(KERNEL_BUILD_TARGET) \
 		--ramdisk out/KERNEL_OBJ/initramfs.gz \
@@ -25,7 +25,7 @@ out/KERNEL_OBJ/boot.img: out/KERNEL_OBJ/initramfs.gz out/KERNEL_OBJ/target-dtb
 		--header_version 0 --hashtype sha1 \
 		-o $@)
 
-out/KERNEL_OBJ/recovery.img: out/KERNEL_OBJ/recovery-initramfs.gz out/KERNEL_OBJ/target-dtb
+out/KERNEL_OBJ/recovery.img: out/KERNEL_OBJ/initramfs.recovery-default out/KERNEL_OBJ/target-dtb.recovery-default
 	$(shell mkbootimg \
 		--kernel $(KERNEL_OUT)/arch/$(KERNEL_ARCH)/boot/$(KERNEL_BUILD_TARGET) \
 		--ramdisk out/KERNEL_OBJ/recovery-initramfs.gz \
