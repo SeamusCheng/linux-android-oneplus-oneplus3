@@ -7,6 +7,7 @@ Uploaders: Eugenio Paolantonio (g7) <eugenio@droidian.org>,
            Erfan Abdi <erfan@droidian.org>,
            Erik Inkinen <erik@droidian.org>,
            Bardia Moshiri <fakeshell@bardia.tech>,
+           Chris Mustola <chris.mustola@gmail.com>,
 XS-Droidian-Host-Arch: arm64
 XS-Droidian-Build-On: amd64
 Build-Depends: build-essential,
