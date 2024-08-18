@@ -11,7 +11,7 @@ VARIANT = android
 KERNEL_BASE_VERSION = 3.18.120
 
 # The kernel cmdline to use
-KERNEL_BOOTIMAGE_CMDLINE = androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 ro root=/dev/dm-0 rootwait want_initramfs init=/init dm="system none ro,0 1 android-verity /dev/sde20" console=tty0 psi=1 droidian.lvm.prefer
+KERNEL_BOOTIMAGE_CMDLINE = androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 ro root=/dev/dm-0 rootwait want_initramfs init=/init dm="system none ro,0 1 android-verity /dev/sde20" console=tty0 psi=1 droidian.lvm.prefer systemd.unified_cgroup_hierarchy=0
 
 # Slug for the device vendor. This is going to be used in the KERNELRELASE
 # and package names.
